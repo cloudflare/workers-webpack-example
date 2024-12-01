@@ -22,3 +22,13 @@ choice.
 To open the Workers preview with the built Worker:
 
 - `npm run preview`
+
+### Automated Deployment
+
+You can use Travis to automatically update your Worker. Just add the following environment variables to your Travis settings:
+
+- `CLOUDFLARE_EMAIL`
+- `CLOUDFLARE_AUTH_KEY`
+- `CLOUDFLARE_ZONE_ID`
+
+The `deploy` block in the `.travis.yml` file will automatically update your worker in Cloudflare when the `master` branch is built using the script at `scripts/deploy`.
